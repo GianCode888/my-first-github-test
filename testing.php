@@ -1,15 +1,15 @@
 <?php
 
-// function oddevenNumber(){
-//     for ($number = 0; $number < 50; $number+=3) {
-//          $numnum = ($number % 2 == 0) ? ' even ' : ' odd ';
-//          echo $number . " Number is " . $numnum .'<br>';
-//     } 
+function oddevenNumber(){
+    for ($number = 0; $number < 50; $number+=3) {
+         $numnum = ($number % 2 == 0) ? ' even ' : ' odd ';
+         echo $number . " Number is " . $numnum .'<br>';
+    } 
     
-// }
-// oddevenNumber();
+}
+oddevenNumber();
 
-
+//git init
 
 // $myGenuineLove = array('i','love', 'you', 'hehe');
 // function simpleArray($array){
