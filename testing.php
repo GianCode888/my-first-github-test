@@ -258,16 +258,46 @@ class Owner{
         echo $this->ownerName .'<br>';
         echo $this->ownerAge .'<br>';
         echo $this->ownerAdress .'<br>';
-        echo $this->ownerEmail;
+        echo $this->ownerEmail .'<br>';
     }
 
     public function displayOwnerinfo(){
-        echo $this->ownerInfo();
+        echo $this->ownerInfo(
+            
+        );
     }
 }
 
- $vetInfo = new Owner('Kyle', 19, 'Ibaan', 'libera@gmail.com');
- $vetInfo->displayOwnerinfo();
+class Pet extends Owner{
+ 
+    public $petBreed, $species, $petName;
+    protected $petAge;
+
+    function __construct($ownerName, $ownerAge, $ownerAdress, $ownerEmail, $petBreed, $species, $petName, $petAge){
+        parent::__construct($ownerName, $ownerAge, $ownerAdress, $ownerEmail);
+        $this->petBreed = $petBreed;
+        $this->species = $species;
+        $this->petName = $petName;
+        $this->petAge = $petAge;
+
+    }
+
+    protected function petInfo(){
+        parent::displayOwnerinfo();
+        echo $this->petBreed .'<br>';
+        echo $this->species .'<br>';
+        echo $this->petName .'<br>';
+        echo $this->petAge;
+    }
+
+    public function displayInfo(){
+        echo $this->petInfo();
+    }
+}
+
+
+ $vetInfo = new Pet('Kyle', 19, 'Ibaan', 'libera@gmail.com','T-Rex', 'Dinosaur', 'Browny', 999999);
+ $vetInfo->displayInfo();
 
 
 
