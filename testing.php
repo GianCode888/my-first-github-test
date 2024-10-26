@@ -1,13 +1,14 @@
 <?php
 
-function oddevenNumber(){
-    for ($number = 0; $number < 50; $number+=3) {
-         $numnum = ($number % 2 == 0) ? ' even ' : ' odd ';
-         echo $number . " Number is " . $numnum .'<br>';
-    } 
-    
-}
-oddevenNumber();
+
+    // function oddevenNumber(){
+    //     for ($number = 0; $number < 50; $number+=3) {
+    //          $numnum = ($number % 2 == 0) ? ' even ' : ' odd ';
+    //          echo $number . " Number is " . $numnum .'<br>';
+    //     } 
+        
+    // }
+    // oddevenNumber();
 
 //git init
 
@@ -235,5 +236,41 @@ oddevenNumber();
 // $mybank = new Thebank(4554, 999, 6996);
 // $mybank->accNumber();
 // $mybank->displaymoney();
+
+
+
+class Owner{
+
+    public $ownerName, $ownerAge, $ownerAdress; 
+    protected $ownerEmail;
+
+
+
+    function __construct($sub1, $sub2, $sub3, $sub4){
+        $this->ownerName = $sub1;
+        $this->ownerAge = $sub2;
+        $this->ownerAdress = $sub3;
+        $this->ownerEmail = $sub4;
+
+    }
+
+    protected function ownerInfo(){
+        echo $this->ownerName .'<br>';
+        echo $this->ownerAge .'<br>';
+        echo $this->ownerAdress .'<br>';
+        echo $this->ownerEmail;
+    }
+
+    public function displayOwnerinfo(){
+        echo $this->ownerInfo();
+    }
+}
+
+ $vetInfo = new Owner('Kyle', 19, 'Ibaan', 'libera@gmail.com');
+ $vetInfo->displayOwnerinfo();
+
+
+
+
 
 ?>
