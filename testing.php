@@ -239,68 +239,99 @@
 
 
 
-class Owner{
+// class Owner{
 
-    public $ownerName, $ownerAge, $ownerAdress; 
-    protected $ownerEmail;
+//     public $ownerName, $ownerAge, $ownerAdress; 
+//     protected $ownerEmail;
 
 
 
-    function __construct($sub1, $sub2, $sub3, $sub4){
-        $this->ownerName = $sub1;
-        $this->ownerAge = $sub2;
-        $this->ownerAdress = $sub3;
-        $this->ownerEmail = $sub4;
+//     function __construct($sub1, $sub2, $sub3, $sub4){
+//         $this->ownerName = $sub1;
+//         $this->ownerAge = $sub2;
+//         $this->ownerAdress = $sub3;
+//         $this->ownerEmail = $sub4;
 
-    }
+//     }
 
-    protected function ownerInfo(){
-        echo $this->ownerName .'<br>';
-        echo $this->ownerAge .'<br>';
-        echo $this->ownerAdress .'<br>';
-        echo $this->ownerEmail .'<br>';
-    }
+//     protected function ownerInfo(){
+//         echo $this->ownerName .'<br>';
+//         echo $this->ownerAge .'<br>';
+//         echo $this->ownerAdress .'<br>';
+//         echo $this->ownerEmail .'<br>';
+//     }
 
-    public function displayOwnerinfo(){
-        echo $this->ownerInfo(
+//     public function displayOwnerinfo(){
+//         echo $this->ownerInfo(
             
-        );
-    }
-}
+//         );
+//     }
+// }
 
-class Pet extends Owner{
+// class Pet extends Owner{
  
-    public $petBreed, $species, $petName;
-    protected $petAge;
+//     public $petBreed, $species, $petName;
+//     protected $petAge;
 
-    function __construct($ownerName, $ownerAge, $ownerAdress, $ownerEmail, $petBreed, $species, $petName, $petAge){
-        parent::__construct($ownerName, $ownerAge, $ownerAdress, $ownerEmail);
-        $this->petBreed = $petBreed;
-        $this->species = $species;
-        $this->petName = $petName;
-        $this->petAge = $petAge;
+//     function __construct($ownerName, $ownerAge, $ownerAdress, $ownerEmail, $petBreed, $species, $petName, $petAge){
+//         parent::__construct($ownerName, $ownerAge, $ownerAdress, $ownerEmail);
+//         $this->petBreed = $petBreed;
+//         $this->species = $species;
+//         $this->petName = $petName;
+//         $this->petAge = $petAge;
 
-    }
+//     }
 
-    protected function petInfo(){
-        parent::displayOwnerinfo();
-        echo $this->petBreed .'<br>';
-        echo $this->species .'<br>';
-        echo $this->petName .'<br>';
-        echo $this->petAge;
-    }
+//     protected function petInfo(){
+//         parent::displayOwnerinfo();
+//         echo $this->petBreed .'<br>';
+//         echo $this->species .'<br>';
+//         echo $this->petName .'<br>';
+//         echo $this->petAge;
+//     }
 
-    public function displayInfo(){
-        echo $this->petInfo();
+//     public function displayInfo(){
+//         echo $this->petInfo();
+//     }
+// }
+
+
+//  $vetInfo = new Pet('Kyle', 19, 'Ibaan', 'libera@gmail.com','T-Rex', 'Dinosaur', 'Browny', 999999);
+//  $vetInfo->displayInfo();
+
+
+class Carsound{
+    function carSound(){
+        echo "The boys";
     }
 }
 
+class Supra extends Carsound{
+    function carSound(){
+        echo 'RATATATATTATATA';
+    }
+}
 
- $vetInfo = new Pet('Kyle', 19, 'Ibaan', 'libera@gmail.com','T-Rex', 'Dinosaur', 'Browny', 999999);
- $vetInfo->displayInfo();
+class Bmw extends Carsound{
+    function carSound(){
+        echo 'BARATATATATATTATA';
+    }
+}
 
+class Lambo extends Carsound{
+    function carSound(){
+        echo 'WAAAAAAAAHHHHHH';
+    }
+}
 
+function sportsCar(Carsound $sportscar){
+    $sportscar->carsound();
+}
 
+$supra = new Supra();
+$bmw = new Bmw();
+$lambo = new Lambo();
+sportsCar($supra);
 
 
 ?>
