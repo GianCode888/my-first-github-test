@@ -300,38 +300,55 @@
 //  $vetInfo->displayInfo();
 
 
-class Carsound{
-    function carSound(){
-        echo "The boys";
-    }
-}
+// class Carsound{
+//     function carSound(){
+//         echo "The boys";
+//     }
+// }
 
-class Supra extends Carsound{
-    function carSound(){
-        echo 'RATATATATTATATA';
-    }
-}
+// class Supra extends Carsound{
+//     function carSound(){
+//         echo 'RATATATATTATATA';
+//     }
+// }
 
-class Bmw extends Carsound{
-    function carSound(){
-        echo 'BARATATATATATTATA';
-    }
-}
+// class Bmw extends Carsound{
+//     function carSound(){
+//         echo 'BARATATATATATTATA';
+//     }
+// }
 
-class Lambo extends Carsound{
-    function carSound(){
-        echo 'WAAAAAAAAHHHHHH';
-    }
-}
+// class Lambo extends Carsound{
+//     function carSound(){
+//         echo 'WAAAAAAAAHHHHHH';
+//     }
+// }
 
-function sportsCar(Carsound $sportscar){
-    $sportscar->carsound();
-}
+// function sportsCar(Carsound $sportscar){
+//     $sportscar->carsound();
+// }
 
-$supra = new Supra();
-$bmw = new Bmw();
-$lambo = new Lambo();
-sportsCar($supra);
+// $supra = new Supra();
+// $bmw = new Bmw();
+// $lambo = new Lambo();
+// sportsCar($supra);
+
+
+
+
+
+
+
+
+
+
+echo 'Hello World';
+
+
+
+
+
+
 
 
 ?>
