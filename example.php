@@ -1,180 +1,219 @@
 <?php
 
-// Constant
-// define ('greeting', 'WELCOME TO BSU LIPA',); 
-// define ('greeting2', 'Welcome Spartan');
-// echo greeting .'<br>';
-// echo greeting2 .'<br>';
-// echo "----------------------------------";
+// ========================================
+// CONSTANTS
+// ========================================
 
+define('greeting', 'WELCOME TO BSU LIPA');
+define('greeting2', 'Welcome Spartan');
+echo greeting . '<br>';
+echo greeting2 . '<br>';
+echo "----------------------------------";
 
-// Array
-// $array1 = ['Kyle', 'Gian'];
-// echo $array1[0] .'<br>';
+// ========================================
+// ARRAYS
+// ========================================
 
-// $array2 = ['Name1' => 'Gianzkei', 'Name2' => 'Kylezkei'];
-// echo $array2['Name2'] .'<br>';
+// Simple Indexed Array
+$array1 = ['Kyle', 'Gian'];
+echo $array1[0] . '<br>';
 
-// $array3 = [
-//           ['Lion', 'Tiger', 'Bear'],
-//          'Array' => ['T-rex', 'Velociraptor', 'Triceratops'],
-//           ];
-// echo $array3['Array'][2] .'<br>';         
+// Associative Array
+$array2 = ['Name1' => 'Gianzkei', 'Name2' => 'Kylezkei'];
+echo $array2['Name2'] . '<br>';
 
-// $array4 = array('Mango', 'Grapes', 'Apple', 'Banana');
-// $count = 0;
+// Multi-dimensional Array
+$array3 = [
+    ['Lion', 'Tiger', 'Bear'],
+    'Array' => ['T-rex', 'Velociraptor', 'Triceratops'],
+];
+echo $array3['Array'][2] . '<br>';
 
-// for($i=0; $i<count($array4); $i++){
-//     foreach($array4 as $fruits){
-//         if($i == $count){
-//             $count++;
-//         }
-//     }
-// }
-// echo $count;
+// Looping through an array using for loop
+$array4 = array('Mango', 'Grapes', 'Apple', 'Banana');
+$count = 0;
 
-// // if else statement
-// $age = '21';
-// if ($age === 21) {
-//     echo "You are allowed";
-// } else {
-//     echo "You are not allowed";
-// }
-// echo '<br>';
-// echo "----------------------------------";
-// echo "<br>";
+for ($i = 0; $i < count($array4); $i++) {
+    foreach ($array4 as $fruits) {
+        if ($i == $count) {
+            $count++;
+        }
+    }
+}
+echo $count;
 
-// // Ternary operator
-// $lovemoko = 'yes';
-// echo $lovemoko === 'yes' ? 'HAHAHA' : 'Syet';
-// echo '<br>';
-// echo "----------------------------------";
-// echo '<br>';
+// ========================================
+// IF-ELSE STATEMENT
+// ========================================
 
-// // another example 
-// $name1 = 'Kyle';
-// echo $name1 == 'Kyle' ? 'Hi ' . $name1 : 'You are not ' . $name1;
+$age = '21';
+if ($age === 21) {
+    echo "You are allowed";
+} else {
+    echo "You are not allowed";
+}
+echo '<br>';
+echo "----------------------------------";
+echo "<br>";
 
-// function myFunction($param1, $param2) {
-//     return 'The answer is ' . $param1 * $param2;
-// }
+// ========================================
+// TERNARY OPERATOR
+// ========================================
 
-// echo "<br>";
-// echo myFunction(2, 3);
-// echo "<br>";
-// echo "----------------------------------";
-// echo "<br>";
+// Simple Ternary Operator Example
+$lovemoko = 'yes';
+echo $lovemoko === 'yes' ? 'HAHAHA' : 'Syet';
+echo '<br>';
+echo "----------------------------------";
+echo '<br>';
 
-// // myFunction ---- Camel casing
-// // Myclass ------- Pascal casing
+// Another Ternary Example
+$name1 = 'Kyle';
+echo $name1 == 'Kyle' ? 'Hi ' . $name1 : 'You are not ' . $name1;
 
-// function incrementNumNum() {
-//     for ($num = 0; $num <= 100; $num += 10) {
-//         echo $num;
-//         echo "<br>";
-//     }
-// }
-// incrementNumNum();
+// ========================================
+// FUNCTIONS
+// ========================================
 
-// echo "----------------------------------";
-// echo "<br>";
+// Function with Parameters
+function myFunction($param1, $param2) {
+    return 'The answer is ' . $param1 * $param2;
+}
 
-// $num = 0;
-// do {
-//     echo $num;
-//     $num += 20;
-//     echo "<br>";
-// } while ($num <= 100);
+echo "<br>";
+echo myFunction(2, 3);
+echo "<br>";
+echo "----------------------------------";
+echo "<br>";
 
-// loops
-// do while
-// less than = increment
-// greater than = decrement
+// Function with Loop
+function incrementNumNum() {
+    for ($num = 0; $num <= 100; $num += 10) {
+        echo $num;
+        echo "<br>";
+    }
+}
+incrementNumNum();
 
-// $num = 6;
+echo "----------------------------------";
+echo "<br>";
 
-// do {
-//     echo 'Numero ' .$num .'<br>';
-//     $num--;
-// } while ($num >= 1);
+// ========================================
+// DO-WHILE LOOP
+// ========================================
 
-// while ($num <= 5) {
-//     echo 'Numero ' .$num .'<br>';
-//     $num++;
-// }
+$num = 0;
+do {
+    echo $num;
+    $num += 20;
+    echo "<br>";
+} while ($num <= 100);
 
-// Initialize, condition, iteration
-// for ($num1 = 1; $num1 <= 5; $num1++) {
-//     echo 'Numero ' .$num1 .'<br>';
-// }
+// ========================================
+// DESCENDING AND ASCENDING DO-WHILE LOOPS
+// ========================================
 
-// create a function that returns loop
+// Decrementing using do-while
+$num = 6;
+do {
+    echo 'Numero ' . $num . '<br>';
+    $num--;
+} while ($num >= 1);
 
-// function myFunc($param1, $param2, $param3, $param4) {
-//     $arr = [$param1, $param2, $param3, $param4];
-//     foreach ($arr as $ar) {
-//         echo 'Numero ' . $ar .'<br>';
-//     }
-// }
-// echo myFunc(34, 33, 56, 56);
+// Incrementing using while loop
+while ($num <= 5) {
+    echo 'Numero ' . $num . '<br>';
+    $num++;
+}
 
-// function incrementNumber(){
-//     for ($num = 0; $num <= 5; $num++) {
-//         $number = ($num % 2 == 0) ? 'even' : 'odd';
-//         echo $num . ' is ' . $number;
-//     }  
-// }
+// ========================================
+// FOR LOOP
+// ========================================
 
-// function decrementNumber() {
-//     for ($num = 50; $num >= 10; $num -= 7) {
-//         $numb = ($num % 2 == 0) ? 'true' : 'false';
-//         echo $num . ' is ' . $numb . '<br>';
-//     }  
-// }
+// Standard For Loop
+for ($num1 = 1; $num1 <= 5; $num1++) {
+    echo 'Numero ' . $num1 . '<br>';
+}
 
-// function myFunction ($param1, $param2, $param3, $param4, $param5) {
-//     $array = [$param1, $param2, $param3, $param4, $param5];
-//     foreach ($array as $name) {
-//         echo $name .'<br>';
-//     }
-// }
+// ========================================
+// FUNCTION THAT RETURNS LOOP
+// ========================================
 
-// $arr = array(1, 2, 3, 4);
-// function forLoop($arr) {
-//     for ($i = 0; $i <= 4; $i++) {
-//         echo $i;
-//         echo "<br>"; 
-//     }
-// }
-// forLoop($arr);
+function myFunc($param1, $param2, $param3, $param4) {
+    $arr = [$param1, $param2, $param3, $param4];
+    foreach ($arr as $ar) {
+        echo 'Numero ' . $ar . '<br>';
+    }
+}
+echo myFunc(34, 33, 56, 56);
 
-// $arr = array(1, 2, 3, 4);
+// ========================================
+// CONDITIONAL LOOPS
+// ========================================
 
-// function forLoopLoop($num) {
-//     foreach ($num as $value) {
-//         echo $value;
-//         echo "<br>";
-//     }
-// }
-// forLoop($arr);
+function incrementNumber() {
+    for ($num = 0; $num <= 5; $num++) {
+        $number = ($num % 2 == 0) ? 'even' : 'odd';
+        echo $num . ' is ' . $number;
+    }  
+}
 
+function decrementNumber() {
+    for ($num = 50; $num >= 10; $num -= 7) {
+        $numb = ($num % 2 == 0) ? 'true' : 'false';
+        echo $num . ' is ' . $numb . '<br>';
+    }  
+}
 
+function myFunctions($param1, $param2, $param3, $param4, $param5) {
+    $array = [$param1, $param2, $param3, $param4, $param5];
+    foreach ($array as $name) {
+        echo $name . '<br>';
+    }
+}
 
-// $arr = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+// ========================================
+// ARRAYS WITH FOR LOOP AND FOREACH
+// ========================================
 
-// for ($i = 0; $i < count($arr); $i++) {
-//     $ternary[$i] = ($arr[$i] % 2 == 0) ? "$arr[$i] is even" . '<br>' : "$arr[$i] is odd" . '<br>';
-//     echo $ternary[$i];
-// }
-// echo "<br>";
-// echo "Hello World" . '<br>';
-// incrementNumber();
-// echo '<br>';
-// decrementNumber();
-// echo '<br>';
-// myFunction('My Lalab', 'My Labidabs', 'My love', 'My everything', 'My Honey');
+// Using For Loop
+$arr = array(1, 2, 3, 4);
+function forLoop($arr) {
+    for ($i = 0; $i <= 4; $i++) {
+        echo $i;
+        echo "<br>"; 
+    }
+}
+forLoop($arr);
 
+// Using Foreach Loop
+$arr = array(1, 2, 3, 4);
 
+function forLoopLoop($num) {
+    foreach ($num as $value) {
+        echo $value;
+        echo "<br>";
+    }
+}
+forLoopLoop($arr);
 
+// ========================================
+// TERNARY OPERATOR WITH ARRAY
+// ========================================
+
+$arr = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+for ($i = 0; $i < count($arr); $i++) {
+    $ternary[$i] = ($arr[$i] % 2 == 0) ? "$arr[$i] is even" . '<br>' : "$arr[$i] is odd" . '<br>';
+    echo $ternary[$i];
+}
+
+echo "<br>";
+echo "Hello World" . '<br>';
+incrementNumber();
+echo '<br>';
+decrementNumber();
+echo '<br>';
+myFunction('My Lalab', 'My Labidabs', 'My love', 'My everything', 'My Honey');
 
 ?>
