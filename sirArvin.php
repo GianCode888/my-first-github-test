@@ -1,7 +1,9 @@
 <?php
-// Test Push
+// ========================================
+// TEST PUSH SECTION
+// ========================================
 
-// Git Commands
+// Git Commands (for version control with Git)
 // Initialize Git repository
 // git init
 // git add .
@@ -11,32 +13,25 @@
 // git remote add origins https://github.com/arvinalmario/multidimension-array.git
 // git push -u origin master
 // git pull
-// git checkout -b <name of branch>
-// git push --set-upstream origin <name of branch>
+// git checkout -b <branch-name>
+// git push --set-upstream origin <branch-name>
 
-// // Array Definitions
-// $array1 = []; // 1D array
-// $array2 = [[], []]; // 2D array
-// $array3 = [[[[]]], [[[]]]]; // 3D array
+// ========================================
+// ARRAY DEFINITIONS
+// ========================================
 
-// Multidimensional Associative Array Example
-$array = [ 
+// Simple multidimensional associative array example
+$array = [
     'Array1' => ['a' => 1, 'b' => 2, 'c' => 3], 
     'Array2' => ['d' => 4, 'e' => 5, 'f' => 6], 
     'Array3' => ['g' => 7, 'h' => 8, 'i' => 9], 
     'Array4' => ['j' => 10, 'k' => 11, 'l' => 12] 
 ];
 
-// Output the multidimensional array
-// var_dump($array);
-// echo '<br><br><br>';
-// print_r($array);
-
-// Accessing a specific value
+// Accessing a specific value in the multidimensional array
 echo 'The value of the array is: ' . $array['Array4']['j'];
 
-// Loop through multidimensional array
-
+// Loop through multidimensional array and print values
 foreach ($array as $index1 => $array1) {
     echo $index1 . '<br>';
     foreach ($array1 as $index2 => $array2) {
@@ -45,8 +40,7 @@ foreach ($array as $index1 => $array1) {
     echo '<br>';
 }
 
-
-// Another Multidimensional Array Example
+// Another example with more complex multidimensional array
 $array = [ 
     'Main1' => [ 
         'Arr1' => ['a' => 1, 'b' => 2, 'c' => 3], 
@@ -61,7 +55,7 @@ $array = [
     ]
 ];
 
-// Loop through the new multidimensional array
+// Nested loop through multidimensional array (commented out)
 /*
 foreach ($array as $index1 => $array1) {
     echo $index1 . '<br>';
@@ -76,7 +70,11 @@ foreach ($array as $index1 => $array1) {
 }
 */
 
-// Example of Pass by Value and Pass by Reference
+// ========================================
+// FUNCTION EXAMPLES: PASS BY VALUE AND PASS BY REFERENCE
+// ========================================
+
+// Pass by value: changes inside function don't affect the original variable
 echo 'Pass by Value' . '<br>';
 function passbyValue($param) {
     $param += 5;
@@ -89,6 +87,7 @@ echo '<br>' . 'This is the value outside of the function: ' . $num;
 
 echo '<br><br>';
 
+// Pass by reference: changes inside function affect the original variable
 echo 'Pass by Reference' . '<br>';
 function passbyRef(&$param1) {
     $param1 += 5;
@@ -99,11 +98,9 @@ $num1 = 10;
 passbyRef($num1);
 echo '<br>' . 'This is the value outside of the function: ' . $num1;
 
-
-
-
-
-
+// ========================================
+// NESTED ARRAY AND LOOPING THROUGH MULTIDIMENSIONAL ARRAY
+// ========================================
 
 $array = [
     'Array1' => [
@@ -123,6 +120,7 @@ $array = [
     ]
 ];
 
+// Nested loop to traverse the array structure
 $outerKeys = array_keys($array);
 
 for ($i = 0; $i < count($outerKeys); $i++) {
@@ -144,39 +142,28 @@ for ($i = 0; $i < count($outerKeys); $i++) {
     echo '<br>';
 }
 
+// ========================================
+// OBJECT-ORIENTED PROGRAMMING (OOP) EXAMPLES
+// ========================================
 
-
-
+// Class representing a school
 class School {
-
-    //member variables
     public $teachers;
     public $subjects;
 
-    //access modifiers
-    //public -> accessible from anywhere, globally
-    //private -> accessible only within the class, not globally
-    //protected -> accessible only within a class and by the derived class
-
-
-
-    //construction
+    // Constructor
     function __construct($param1, $param2){
-        $this -> teachers = $param1;
-        $this -> subjects = $param2;
+        $this->teachers = $param1;
+        $this->subjects = $param2;
     }
 
-
-    //methods or functions
-
-    //getter and setter function
-
+    // Getter and Setter functions
     function getTeachers(){
-        echo $this->teachers .'<br>';
+        echo $this->teachers . '<br>';
     }
 
     function getSubjects(){
-        echo $this->subjects .'<br>';
+        echo $this->subjects . '<br>';
     }
 
     function setTeachers($profs){
@@ -186,41 +173,36 @@ class School {
     function setSubjects($subj){
         $this->subjects = $subj;
     }
-
 }
 
 $myStudents = new School('Sir Arvin', 'Programming');
 
-    //set the value
-    $myStudents->setTeachers('Mr. Smith');
-    $myStudents->setSubjects('Programming');
+// Set and display values
+$myStudents->setTeachers('Mr. Smith');
+$myStudents->setSubjects('Mathematics');
+$myStudents->getTeachers();
+$myStudents->getSubjects();
 
-    //display value
-    $myStudents->getTeachers();
-    $myStudents->getSubjects();
+// ========================================
+// INHERITANCE IN OOP
+// ========================================
 
+class Vehicle {
+    public $brand;
+    public $color;
 
-
-// Inheritance
-
-class Vehicle { //Parent or Main class
-
-     public $brand;
-     public $color;
-
-     function __construct($param1, $param2){
+    function __construct($param1, $param2){
         $this->brand = $param1;
         $this->color = $param2;
-     }
+    }
 
-     function showVehicle(){
-        echo 'The vehicle brand is ' .$this->brand .'<br>';
-        echo 'The vehicle color is ' .$this->color .'<br>';
-     }
+    function showVehicle(){
+        echo 'The vehicle brand is ' . $this->brand . '<br>';
+        echo 'The vehicle color is ' . $this->color . '<br>';
+    }
 }
 
-class Car extends Vehicle { //Child or Sub class
-
+class Car extends Vehicle {
     public $yearModel;
 
     function __construct($brand, $color, $yearModel){
@@ -230,54 +212,48 @@ class Car extends Vehicle { //Child or Sub class
 
     function showVehicle(){
         parent::showVehicle();
-        echo 'The vehicle year model is ' .$this->yearModel .'<br>';
+        echo 'The vehicle year model is ' . $this->yearModel . '<br>';
     }
 }
 
-// $veh = new Vehicle('Supra', 'White');
-// $veh->showVehicle();
-
-
+// Instantiate and show vehicle details
 $obj = new Car('Keeway', 'White', 1800);
 $obj->showVehicle();
 
+// ========================================
+// ENCAPSULATION AND ACCESS MODIFIERS
+// ========================================
 
-class Mybank{
-
+class Mybank {
     public $accNumber;
     protected $balance;
     private $pin;
 
     function __construct($param1, $param2, $param3){
-        
         $this->accNumber = $param1;
         $this->balance = $param2;
         $this->pin = $param3;
-
     }
 
-    
-public function showAccNum(){
-    echo 'Account number is ' . $this->accNumber .'<br>';
-}
+    public function showAccNum(){
+        echo 'Account number is ' . $this->accNumber . '<br>';
+    }
 
-protected function showBalance(){
-    echo 'The balance is ' .$this->balance .'<br>';
-}
+    protected function showBalance(){
+        echo 'The balance is ' . $this->balance . '<br>';
+    }
 
-private function pin(){
-    echo 'The pin is ' .$this->pin .'<br>';
-}
+    private function pin(){
+        echo 'The pin is ' . $this->pin . '<br>';
+    }
 
-public function showBalances(){
-    $this->showBalance();
-}
+    public function showBalances(){
+        $this->showBalance();
+    }
 
-public function showpin(){
-    $this->pin();
-}
-
-
+    public function showpin(){
+        $this->pin();
+    }
 }
 
 $mybank = new Mybank(6786, '50M', 444);
@@ -285,50 +261,38 @@ $mybank->showAccNum();
 $mybank->showBalances();
 $mybank->showpin();
 
+// ========================================
+// POLYMORPHISM IN OOP
+// ========================================
 
-// polymorphism
-
-// override
-class Animal{
-
+// Base class Animal
+class Animal {
     function sound(){
-        echo 'Every animal have a unique sounds ';
+        echo 'Every animal has a unique sound.<br>';
     }
 }
 
-class Dog extends Animal{
-
-    function sound()  {
-        echo 'Wahh! wahh!';
+class Dog extends Animal {
+    function sound(){
+        echo 'Wahh! wahh!<br>';
     }
 }
 
-class Cat extends Animal{
-
-    function sound()  {
-        echo 'Kupal! Kupal!';
+class Cat extends Animal {
+    function sound(){
+        echo 'Kupal! Kupal!<br>';
     }
 }
 
-function theAnimal( Animal $animal){
+// Function to demonstrate polymorphism
+function theAnimal(Animal $animal){
     $animal->sound();
 }
 
+// Instantiate and call sound function
 $dog = new Dog();
-$cat = new Cat(); 
+$cat = new Cat();
 theAnimal($dog);
 theAnimal($cat);
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
