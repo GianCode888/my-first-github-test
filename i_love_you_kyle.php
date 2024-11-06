@@ -1,0 +1,3 @@
+<?php
+echo "INAKA KA KYLE, TANGINA POGI MO";
+?>
