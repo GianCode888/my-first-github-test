@@ -1,5 +1,15 @@
 <?php
-echo "Hello World";
-echo "Testing for Pull";
-echo "wala lang";
+
+$currentYear = date("Y");
+
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Promoting Sustainable Practices and Biodiversity Conservation">
+    <title>Promote Sustainable Practices & Biodiversity</title>
+</head>
+<body>
